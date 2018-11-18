@@ -13,3 +13,13 @@ Issues:
 - Zoom is written so badly... so badly... maaaybe I'll fix it when fixing the zoom
 - Right click save the previous view, no sure how I was done - yes, before 2020
 - The documentation is lacking
+
+Running it:
+```
+git clone git@github.com:smitherson/image-visualiser.git
+cd image-visualiser
+mkdir build
+cmake ..
+make
+./example/image-visualiser-example
+```
