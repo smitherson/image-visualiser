@@ -43,18 +43,14 @@ void ImageVisualiser::redrawImage() {
    
     if (currentRect.x + originalSize.width > zoomedWidth) currentRect.x = currentRect.x - (originalSize.width - (zoomedWidth-currentRect.x));
     if (currentRect.y + originalSize.height > zoomedHeight) currentRect.y = currentRect.y - (originalSize.height- (zoomedHeight-currentRect.y));
-    //if (zoom > 1) {
+    
     imshow(windowName, zoomedImage(currentRect)); 
-    //} else {
-    //    imshow(windowName, image);           
-    //}
-
 }
 
 void ImageVisualiser::onMouse(int event, int col, int row, int flags)
 {
 
- //getWindowProperty() to de;ete?
+    //getWindowProperty() to de;ete?
 
     bool doRedraw = false;
     if (event == CV_EVENT_LBUTTONDOWN) {
