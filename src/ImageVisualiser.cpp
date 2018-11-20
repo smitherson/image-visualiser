@@ -51,6 +51,7 @@ void ImageVisualiser::onMouse(int event, int col, int row, int flags)
 {
 
     //getWindowProperty() to de;ete?
+    //will fix the memory leak
 
     bool doRedraw = false;
     if (event == CV_EVENT_LBUTTONDOWN) {
