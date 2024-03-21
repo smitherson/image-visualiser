@@ -3,7 +3,7 @@
 
 int main() {
 
-  cv::Mat_<cv::Vec3b> img1 = cv::imread("./example/test.png", CV_LOAD_IMAGE_COLOR);
+  cv::Mat_<cv::Vec3b> img1 = cv::imread("./test.png", cv::IMREAD_COLOR);
 
   ImageVisualiser* imshow1 = new ImageVisualiser("image1 ", img1); 
 

@@ -1,16 +1,25 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.12)
 
-project(image-visualiser )
+project(image-visualiser VERSION 1.0.0
+ DESCRIPTION "badly written image inspector for opencv debugging"
+ LANGUAGES CXX)
 
 find_package(OpenCV REQUIRED)
+message(STATUS "OpenCV Include: ${OpenCV_INCLUDE_DIRS}")
 
-include_directories( ${PROJECT_SOURCE_DIR}/include )
+#include_directories( ${PROJECT_SOURCE_DIR}/include )
 
-set(SOURCE_FILES
-    ${PROJECT_SOURCE_DIR}/src/ImageVisualiser.cpp
+add_library(image-visualiser SHARED  ${PROJECT_SOURCE_DIR}/src/ImageVisualiser.cpp)
+
+target_include_directories(image-visualiser 
+    PUBLIC 
+        $<INSTALL_INTERFACE:include>
+        $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+   
+        ${OpenCV_INCLUDE_DIRS}
+    PRIVATE
 )
 
-add_library(image-visualiser SHARED ${SOURCE_FILES})
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/example/)  
 
